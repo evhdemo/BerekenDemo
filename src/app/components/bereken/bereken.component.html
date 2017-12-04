@@ -1,0 +1,23 @@
+<h2 class="page-header">Voer een berekening uit</h2>
+<form (ngSubmit)="bereken(soort,getal1,getal2)">
+  <div class="form-group">
+    <label>Getal 1</label>
+    <input class="form-control" type="number" [(ngModel)]="getal1" name="Getal 1" required>
+  </div>
+  <div class="form-group">
+    <label>Getal 2</label>
+    <input class="form-control" type="number" [(ngModel)]="getal2" name="Getal 2" required>
+  </div>
+  <div class="form-group">
+    <label>Soort berekening</label>
+    <select class="form-control" [(ngModel)]="soort" name="Soort">
+      <option [value]="soort" *ngFor="let soort of soorten">{{soort}}</option>
+    </select>
+  </div>
+  <input type="submit" value="Bereken" class="btn btn-success">
+  <div class="form-group">
+    <label>Resultaat</label>
+    <input class="form-control" type="number" [(ngModel)]="result" name="Resultaat" required>
+    <h3>{{Result}}</h3>
+  </div>
+</form>

@@ -6,6 +6,7 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
+      "karma-spec-reporter",
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
@@ -22,7 +23,25 @@ module.exports = function (config) {
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'coverage-allsources', 'coverage','spec'],
+    coverageReporter: {
+      dir: 'docs/coverage',
+      include: 'src/**/!(*.spec).js',
+      exclude: 'src/main.js',
+      reporters: [
+        { type: 'html', subdir: 'report-html' },
+        { type: 'clover', subdir: '.', file: 'clover.xml' }
+      ]
+    },
+    specReporter: {
+      maxLogLines: 5,             // limit number of lines logged per test 
+      suppressErrorSummary: true, // do not print error summary 
+      suppressFailed: false,      // do not print information about failed tests 
+      suppressPassed: false,      // do not print information about passed tests 
+      suppressSkipped: true,      // do not print information about skipped tests 
+      showSpecTiming: false,      // print the time elapsed for each spec 
+      failFast: true              // test would finish with error when a first fail occurs.  
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
