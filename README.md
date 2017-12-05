@@ -14,6 +14,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+## VSTS Build info
+
+[<img src="https://evhdemo1.visualstudio.com/_apis/public/build/definitions/28be94c1-1c01-473b-aba4-6e057bd9361f/5/badge"/>]
+(https://evhdemo.visualstudio.com/BerekenDemo/_build/index?definitionId={5})
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
